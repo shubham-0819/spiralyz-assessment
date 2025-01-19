@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get an Intervention</title>
+
+    <!-- loading fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="logo">
+          <img
+            src="logo.svg"
+            alt="Get an Intervention Logo"
+            width="300"
+            height="40"
+          />
+        </div>
+        <div class="nav-links">
+          <a href="#" class="active">HOME</a>
+          <a href="#">ABOUT</a>
+          <a href="#">CONTACT</a>
+        </div>
+        <div class="contact-phone">
+          <a href="tel:123.456.7890">CALL NOW FOR A CONSULT 123.456.7890</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section hero">
+        <div class="hero-content">
+          <h1>
+            <span class="outlined-text">GET AN</span> <span>INTERVENTION</span>
+          </h1>
+          <p>
+            Showing greater respect to older adults can be done in several ways,
+            acknowledging and putting to use the talents and skills of older
+            adults, creating intergenerational initiatives, and allowing older
+            adults to stay active and independent for as long as possible.
+          </p>
+        </div>
+        <div class="contact-form-container">
+          <h2>Contact Us</h2>
+          <form
+            id="contactForm"
+            action="thank-you.html"
+            onsubmit="return validateForm(event)"
+          >
+            <div class="form-row">
+              <label for="firstName" class="pure-material-textfield-outlined">
+                <input id="firstName" name="firstName" placeholder=" " />
+                <span>First Name</span>
+              </label>
+              <label for="lastName" class="pure-material-textfield-outlined">
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder=" "
+                />
+                <span>Last Name</span>
+              </label>
+            </div>
+            <div class="form-row">
+              <label for="email" class="pure-material-textfield-outlined">
+                <input type="email" id="email" name="email" placeholder=" " />
+                <span>Business Email</span>
+              </label>
+              <label for="company" class="pure-material-textfield-outlined">
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder=" "
+                />
+                <span>Company</span>
+              </label>
+            </div>
+            <label for="company" class="pure-material-textfield-outlined">
+              <input type="text" id="company" name="company" placeholder=" " />
+              <span>Select Country</span>
+            </label>
+
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+      </section>
+      <!-- <div class="wave"></div> -->
+      <img class="wave" src="assets/curve.svg" alt="" srcset="" />
+      <img class="wave-2" src="assets/curve-2.svg" alt="" srcset="" />
+
+      <section class="image-cards">
+        <!-- Image cards will be populated via JavaScript -->
+        <div class="image-card-item-1"></div>
+        <div class="image-card-item-2"></div>
+        <div class="image-card-item-3"></div>
+      </section>
+
+      <section class="understand">
+        <h2><span class="outlined-text-black">WE</span> UNDERSTAND</h2>
+        <div class="understand-content">
+          <div>
+            Older adults want to play active and meaningful roles in their
+            lives, including as part of a social network, a neighborhood, and a
+            community. Service providers and policymakers must consider that a
+            lack of sense of purpose can become problematic as people age.
+            Engaging them in leisure activities and volunteer work is important.
+          </div>
+          <div>
+            Older adults want to stay active and contribute to society in a
+            reciprocal manner (meaning that they want to exchange their services
+            and skills with others for the mutual benefit of the neighborhood or
+            community). Qualitative and quantitative studies published from 2005
+            to 2016 examining the social needs of older adults were eligible for
+            inclusion.
+          </div>
+          <div>
+            To stimulate social contacts, neighborhood initiatives can be
+            developed. Social meeting places, such as pubs and churches can help
+            to foster the development of close and peripheral relationships.
+            <div class="success-rate">
+              <span>92% Success Rate</span>
+              <span class="arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="testimonial-container">
+          <div class="testimonial active">
+            <img
+              src="assets/testimonial.png"
+              alt="Abbie Harvey"
+              class="testimonial-image"
+            />
+            <div class="testimonial-content">
+              <h3>Abbie Harvey</h3>
+              <p>
+                I have been caring for my mom & dad off and on for about 10
+                years now, and I know the importance of me being there for
+                appointments. Older people need attention, love and care that
+                they truly deserve.
+              </p>
+              <div class="quotes">"</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+
+      <section class="organize">
+        <h2 class="header">
+          <span class="outlined-text-black">WE CAN</span> ORGANIZE EVERYTHING
+        </h2>
+        <div class="organize-content">
+          <div class="organize-content-item">
+            <span>Interventions</span> should focus on older adult’s desire for
+            connectedness, participation and independence.
+          </div>
+          <div class="organize-content-item">
+            Loneliness and social isolation are growing public health concerns
+            in our aging society. Whilst these experiences occur across the life
+            span, 50% of individuals aged over 60 are at risk of social
+            isolation and one-third will experience some degree of loneliness
+            later in life. It is vital to reduce loneliness and social isolation
+            among older adults.
+          </div>
+          <div class="organize-content-item">
+            The methodology framework proposed by Asked and O’Malley and further
+            developed by Levac, et al. was used to guide the scoping review
+            process. A total of 33 reviews met the inclusion criteria,
+            evaluating a range of interventions targeted at older people
+            residing in the community or institutionalised settings.
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>Needs Assessment</h3>
+          </div>
+          <div class="service-card">
+            <h3>Treatment Planning & Placement</h3>
+
+          </div>
+          <div class="service-card">
+            <h3>Transportation & Logistics</h3>
+          </div>
+          <div class="service-card">
+            <h3>Insurance Advocacy</h3>
+          </div>
+          <div class="service-card">
+            <h3>Employment Advocacy</h3>
+          </div>
+          <div class="service-card">
+            <h3>Aftercare Planning</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-section">
+        <h2><span class="outlined-text">WATCH </span>THE VIDEO</span></h2>
+        <div class="video-container">
+          <div class="video-overlay">
+            <button class="play-btn" aria-label="Play video">
+              <svg width="64" height="64" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="32" fill="#4CAF50" />
+                <path d="M26 20l20 12-20 12V20z" fill="white" />
+              </svg>
+            </button>
+          </div>
+          <video id="mainVideo" poster="">
+            <source
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Get an Intervention Inc. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms of Use</a>
+          <span>|</span>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
