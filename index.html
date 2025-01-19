@@ -58,6 +58,7 @@
         <div class="contact-form-container">
           <h2>Contact Us</h2>
           <form
+            class="contact-form"
             id="contactForm"
             action="thank-you.html"
             onsubmit="return validateForm(event)"
@@ -92,12 +93,17 @@
                 <span>Company</span>
               </label>
             </div>
-            <label for="company" class="pure-material-textfield-outlined">
+            <label style="width: 100%;" for="company" class="pure-material-textfield-outlined">
               <input type="text" id="company" name="company" placeholder=" " />
               <span>Select Country</span>
             </label>
 
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn">
+              <div class="icon">
+                <img src="assets/send.svg" alt="" srcset="">
+              </div>
+              <span>Submit</span> 
+              </button>
           </form>
         </div>
       </section>
@@ -219,8 +225,51 @@
       </section>
 
       <section class="video-section">
-        <h2><span class="outlined-text">WATCH </span>THE VIDEO</span></h2>
-        <div class="video-container">
+
+        <div class="left">
+          <h2>
+            <span class="outlined-text">WATCH </span>
+            THE VIDEO
+          </h2>
+
+          <div class="left-content">
+          <div class="left-content-item">
+            <div class="left-content-item-heading">
+              <img src="assets/check.svg" alt="" srcset="">
+              Needs Assessment
+            </div>
+            <div class="left-content-item-sumarry">
+              The Advocacy Evaluation Toolkit contains the instruments used to collect data for evaluating the Consumer Voices for Coverage program. 
+            </div>
+          </div>
+          <div class="left-content-item">
+            <div class="left-content-item-heading">
+              <img src="assets/check.svg" alt="" srcset="">
+              Insurance Advocacy
+            </div>
+            <div class="left-content-item-sumarry">
+              We are committed to advocating for appropriate coverage and payment policies.
+            </div>
+          </div>
+          <div class="left-content-item">
+            <div class="left-content-item-heading">
+              <img src="assets/check.svg" alt="" srcset="">
+              Treatment Planning & Placement
+            </div>
+            <div class="left-content-item-sumarry">
+              Patients can better understand medical procedures, discharge instructions, etc.
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+        <div class="right">
+          <div class="mask">
+            <img src="assets/play-btn.svg" alt="" srcset="">
+          </div>
+        </div>
+        <!-- <h2><span class="outlined-text">WATCH </span>THE VIDEO</span></h2> -->
+        <!-- <div class="video-container">
           <div class="video-overlay">
             <button class="play-btn" aria-label="Play video">
               <svg width="64" height="64" viewBox="0 0 64 64">
@@ -236,7 +285,7 @@
             />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div> -->
       </section>
     </main>
 
