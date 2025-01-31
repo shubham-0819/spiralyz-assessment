@@ -97,7 +97,7 @@ function createVideoModal() {
   modal.innerHTML = `
     <div class="video-container" style="position: relative;">
       <button onclick="removeVideoModal()" style="position: absolute; top: -40px; right: 0; background: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px;">✕</button>
-      <video id="mainVideo" controls>
+      <video id="mainVideo" controls autoplay>
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
