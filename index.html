@@ -20,7 +20,7 @@
       <nav class="nav-container">
         <div class="logo">
           <img
-            src="logo.svg"
+            src="assets/logo.svg"
             alt="Get an Intervention Logo"
             width="226"
             height="35"
@@ -155,7 +155,7 @@
 
       <section class="testimonials">
         <div class="testimonial-container">
-          <div class="testimonial active">
+          <div class="carousel-item testimonial active">
             <img
               src="assets/testimonial.png"
               alt="Abbie Harvey"
@@ -172,11 +172,45 @@
               <img width="24px" class="quotes" src="assets/quotes.svg" alt="" />
             </div>
           </div>
+          <div class="carousel-item testimonial">
+            <img
+              src="assets/testimonial-2.png"
+              alt="Abbie Harvey"
+              class="testimonial-image"
+            />
+            <div class="testimonial-content">
+              <h3>Abbie Harvey</h3>
+              <p class="testimonial-text">
+                I have been caring for my mom & dad off and on for about 10
+                years now, and I know the importance of me being there for
+                appointments. Older people need attention, love and care that
+                they truly deserve.
+              </p>
+              <img width="24px" class="quotes" src="assets/quotes.svg" alt="" />
+            </div>
+          </div>
+          <div class="carousel-item testimonial">
+            <img
+              src="assets/testimonial-3.png"
+              alt="Abbie Harvey"
+              class="testimonial-image"
+            />
+            <div class="testimonial-content">
+              <h3>Abbie Harvey</h3>
+              <p class="testimonial-text">
+                I have been caring for my mom & dad off and on for about 10
+                years now, and I know the importance of me being there for
+                appointments. Older people need attention, love and care that
+                they truly deserve.
+              </p>
+              <img width="24px" class="quotes" src="assets/quotes.svg" alt="" />
+            </div>
+          </div>
         </div>
         <div class="testimonial-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+          <span class="dot active" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+          <span class="dot" onclick="goToSlide(2)"></span>
         </div>
       </section>
 
@@ -285,16 +319,11 @@
           </div>
         </div>
         <div id="video-container" class="right">
-          <video
-            id="mainVideo"
-            class="video"
-            poster="assets/video-cover.png"
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
-          ></video>
-          
+          <div class="footer-image"></div>
+
           <img
             class="footer-logo"
-            src="logo.svg"
+            src="assets/logo.svg"
             alt="Get an Intervention Logo"
             width="300"
             height="40"
@@ -322,6 +351,58 @@
       </div>
     </footer>
 
+    <!-- <div class="video-popup">
+      <video
+        id="mainVideo"
+        class="video"
+        poster="assets/video-cover.png"
+        src=""
+      ></video>
+    </div> -->
+
     <script src="script.js"></script>
+    <script>
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".carousel-item");
+        const dots = document.querySelectorAll(".dot");
+
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === currentSlide);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentSlide);
+        });
+
+        document.querySelector(
+          ".carousel-inner"
+        ).style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+
+      function goToSlide(index) {
+        showSlide(index);
+      }
+
+      // Auto-play (optional)
+      setInterval(nextSlide, 5000);
+    </script>
   </body>
 </html>

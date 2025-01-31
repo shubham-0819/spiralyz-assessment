@@ -53,9 +53,12 @@ const videoContainer = document.querySelector(".video-container");
 const video = document.getElementById("mainVideo");
 const playBtn = document.querySelector(".play-btn");
 const videoOverlay = document.querySelector(".video-overlay");
+const popUpEl = document.querySelector(".video-popup");
 
 if (playBtn) {
   playBtn.addEventListener("click", () => {
+    // popUpEl.style.visibility = "visible";
+    createVideoModal();
     video.play();
     videoOverlay.style.display = "none";
   });
@@ -77,28 +80,34 @@ if (mobileMenuBtn) {
   });
 }
 
-// Testimonial carousel
-const dots = document.querySelectorAll(".dot");
-const testimonials = document.querySelectorAll(".testimonial");
-let currentTestimonial = 0;
+function createVideoModal() {
+  const modal = document.createElement("div");
+  modal.classList.add("video-popup");
+  modal.style.position = "fixed";
+  modal.style.top = "0";
+  modal.style.left = "0";
+  modal.style.width = "100%";
+  modal.style.height = "100%";
+  modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  modal.style.display = "flex";
+  modal.style.justifyContent = "center";
+  modal.style.alignItems = "center";
+  modal.style.zIndex = "9999";
+  modal.style.padding = "20px";
+  modal.innerHTML = `
+    <div class="video-container" style="position: relative;">
+      <button onclick="removeVideoModal()" style="position: absolute; top: -40px; right: 0; background: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px;">✕</button>
+      <video id="mainVideo" controls>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  `;
 
-function showTestimonial(index) {
-  testimonials.forEach((t) => t.classList.remove("active"));
-  dots.forEach((d) => d.classList.remove("active"));
-
-  testimonials[index].classList.add("active");
-  dots[index].classList.add("active");
+  document.body.appendChild(modal);
 }
 
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentTestimonial = index;
-    showTestimonial(currentTestimonial);
-  });
-});
-
-// Auto-rotate testimonials
-setInterval(() => {
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-  showTestimonial(currentTestimonial);
-}, 5000);
+function removeVideoModal() {
+  const modal = document.querySelector(".video-popup");
+  modal.remove();
+}
